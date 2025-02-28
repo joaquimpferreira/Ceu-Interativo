@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07081a;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    transition: background-color 2s ease-in-out;
+}
+
+button {
+    outline-style: dashed;
+    outline-width: 2px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: rgba(270,270,270,0.4);
+    padding: 10px 20px;
+    position: absolute;
+}
+
+button:hover{
+    background-color: rgba(250, 250, 250, 0.2);
+    outline-style: solid;
+}
+
+.estrela{
+    position: absolute;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: rgb(255, 219, 61);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgb(155, 132, 30);
+    animation: brilhar 1s infinite alternate;
+    cursor: pointer;
+    transition: transform 2s ease-in-out;
+}
+
+.estrela:hover{
+    width: 7px;;
+    height: 7px;
+}
+
+.estrela2{
+    position: absolute;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px white;
+    animation: brilhar 0.5s infinite alternate;
+    cursor: pointer;
+}
+
+.estrela2:hover{
+    width: 0.6vw;
+    height: 0.6vw;
+}
+
+.meteoro{
+    position: absolute;
+    width: 10px; 
+    height: 10px; 
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgb(160, 175, 255);
+    animation: meteoro 2s infinite forwards;
+}
+
+@keyframes brilhar {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+@keyframes meteoro {
+    0% {
+        transform: translateY(-50px) translateX(-50px); 
+    }
+    100% {
+        transform: translateY(calc(100vh + 50px)) translateX(200px); 
+}}
+
+.zoom {
+    transform: scale(50); 
+    transition: transform 2s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .estrela, .estrela2 {
+        width: 0.8vw;
+        height: 0.8vw;
+    }
+    .estrela:hover, .estrela2:hover {
+        width: 1vw;
+        height: 1vw;
+    }
+    .meteoro {
+        width: 1vw;
+        height: 1vw;
+    }
+    button {
+        font-size: 3vw;
+        padding: 2vw 4vw;
+    }
+}
